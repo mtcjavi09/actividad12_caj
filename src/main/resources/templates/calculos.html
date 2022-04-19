@@ -16,7 +16,7 @@
                     <div class="col-md-7">
                         <div class="card-body">
                             <p class="login-card-description">Ingresa el nuevo triángulo</p>
-                            <form action="#" th:action="@{/save}" th:object="${triangle}" method="post">
+                            <form action="#" th:action="@{/save}" th:object="${triangleEntity}" method="post">
                                 <div class="form-group">
                                     <label for="base" class="sr-only">Base</label>
                                     <input type="text" name="base" id="base" class="form-control" placeholder="Base del triángulo" th:field="*{base}">
