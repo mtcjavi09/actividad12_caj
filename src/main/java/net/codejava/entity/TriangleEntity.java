@@ -38,8 +38,8 @@ public class TriangleEntity
         this.id = id;
         this.base = base;
         this.altura = altura;
-        this.perimetro = perimetro;
-        this.area = area;
+        this.perimetro = 3 * base;
+        this.area = (base * altura) / 2;;
     }
 
     //Se generaron los getters para cada atributo

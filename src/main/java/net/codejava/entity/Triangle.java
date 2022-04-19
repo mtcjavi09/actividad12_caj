@@ -4,6 +4,7 @@
     FECHA                           :   19 abr 2022
     Clase Triangle con los métodos y atributos del triángulo
  */
+
 package net.codejava.entity;
 
 public class Triangle 
@@ -13,7 +14,7 @@ public class Triangle
     private int altura;
     private int perimetro;
     private int area;
-    
+
     //Métodos get y set para acceder a atributos privados
     public int getBase() {return base;}
     public void setBase(int base) {this.base = base;}
@@ -23,7 +24,7 @@ public class Triangle
     public void setPerimetro(int perimetro) {this.perimetro = perimetro;}
     public int getArea() {return area;}
     public void setArea(int area) {this.area = area;}
-    
+
     //Contructor vacío
     public Triangle() {}
 
@@ -32,23 +33,5 @@ public class Triangle
     {
         this.base = Integer.parseInt(base);
         this.altura = Integer.parseInt(altura);
-    }
-    
-    //Cálculo del perímetro
-    public void perimetro()
-    {
-        //Se calcula el perímetro con la fórmula P = 3base
-        int perimetro = 3 * base;
-        //Se guarda el resultado
-        this.setPerimetro(perimetro);
-    }
-    
-    //Cálculo del área
-    public void area()
-    {
-        //Se calcula el área con la fórmula A = (base * altura) / 2
-        int area = (base * altura) / 2;
-        //Se guarda el resultado
-        this.setArea(area);
     }
 }

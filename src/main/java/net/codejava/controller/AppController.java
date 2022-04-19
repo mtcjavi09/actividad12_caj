@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AppController {
@@ -41,11 +42,12 @@ public class AppController {
     }
     
     @RequestMapping("/new")
-    public String nuevoCalculo(Model model) 
+    public ModelAndView nuevoCalculo(Model model) 
     {
+        ModelAndView mav = new ModelAndView("calculos");
         TriangleEntity triangle = new TriangleEntity();
-        model.addAttribute("triangulo", triangle);
-        return "calculos";
+        mav.addObject("triangle", triangle);
+        return mav;
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
