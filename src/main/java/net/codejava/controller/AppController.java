@@ -9,6 +9,7 @@ package net.codejava.controller;
 
 import java.util.List;
 import javax.servlet.http.HttpSession;
+import net.codejava.entity.Triangle;
 import net.codejava.services.TriangleService;
 import net.codejava.entity.TriangleEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,17 +43,18 @@ public class AppController {
     }
     
     @RequestMapping("/new")
-    public ModelAndView nuevoCalculo(Model model) 
+    public String nuevoCalculo(Model model) 
     {
-        ModelAndView mav = new ModelAndView("calculos");
         TriangleEntity triangle = new TriangleEntity();
-        mav.addObject("triangle", triangle);
-        return mav;
+        model.addAttribute("triangle", triangle);
+        return "calculos";
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveProduct(@ModelAttribute("triangulo") TriangleEntity triangle) 
+    public String saveProduct(@ModelAttribute("triangle") TriangleEntity triangle) 
     {
+        triangle.setPerimetro(3.0 * triangle.getBase());
+        triangle.setArea((triangle.getBase() * triangle.getAltura()) / 2.0);
         service.save(triangle);
         return "redirect:/";
     }

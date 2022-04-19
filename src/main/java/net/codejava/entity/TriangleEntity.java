@@ -23,29 +23,32 @@ public class TriangleEntity
     @GeneratedValue(strategy=GenerationType.AUTO)
     //Se indican los atributos de la tabla
     private Long id;
-    private int base;
-    private int altura;
-    private int perimetro;
-    private int area;
+    private double base;
+    private double altura;
+    private double perimetro;
+    private double area;
     
     //Contructor vacío
     public TriangleEntity() {}
 
     //Constructor protegido con todos los atributos
-    protected TriangleEntity(Long id, int base, int altura, int perimetro, int area) 
+    protected TriangleEntity(Long id, double base, double altura) 
     {
         super();
         this.id = id;
         this.base = base;
         this.altura = altura;
-        this.perimetro = 3 * base;
-        this.area = (base * altura) / 2;;
     }
-
-    //Se generaron los getters para cada atributo
+    
+    //Se generaron los getters y setters para cada atributo
+    public void setId(Long id) {this.id = id;}
+    public void setBase(double base) {this.base = base;}
+    public void setAltura(double altura) {this.altura = altura;}
+    public void setPerimetro(double perimetro) {this.perimetro = perimetro;}
+    public void setArea(double area) {this.area = area;}
     public Long getId() {return id;}
-    public int getBase() {return base;}
-    public int getAltura() {return altura;}
-    public int getPerimetro() {return perimetro;}
-    public int getArea() {return area;}    
+    public double getBase() {return base;}
+    public double getAltura() {return altura;}
+    public double getPerimetro() {return perimetro;}
+    public double getArea() {return area;}    
 }

@@ -10,28 +10,28 @@ package net.codejava.entity;
 public class Triangle 
 {
     //Atributos del triángulo
-    private int base;
-    private int altura;
-    private int perimetro;
-    private int area;
+    private double base;
+    private double altura;
+    private double perimetro;
+    private double area;
 
     //Métodos get y set para acceder a atributos privados
-    public int getBase() {return base;}
-    public void setBase(int base) {this.base = base;}
-    public int getAltura() {return altura;}
-    public void setAltura(int altura) {this.altura = altura;}
-    public int getPerimetro() {return perimetro;}
-    public void setPerimetro(int perimetro) {this.perimetro = perimetro;}
-    public int getArea() {return area;}
-    public void setArea(int area) {this.area = area;}
+    public double getBase() {return base;}
+    public void setBase(double base) {this.base = base;}
+    public double getAltura() {return altura;}
+    public void setAltura(double altura) {this.altura = altura;}
+    public double getPerimetro() {return perimetro;}
+    public void setPerimetro(double perimetro) {this.perimetro = perimetro;}
+    public double getArea() {return area;}
+    public void setArea(double area) {this.area = area;}
 
     //Contructor vacío
     public Triangle() {}
 
     //Constructor con la base y la altura
-    public Triangle(String base, String altura) 
+    public Triangle(double base, double altura) 
     {
-        this.base = Integer.parseInt(base);
-        this.altura = Integer.parseInt(altura);
+        this.base = base;
+        this.altura = altura;
     }
 }

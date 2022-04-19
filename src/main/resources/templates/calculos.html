@@ -7,33 +7,25 @@
         <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/login.css">
     </head>
     <body>
-        <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
-            <div class="container">
-                <div class="card login-card">
-                    <div class="col-md-7">
-                        <div class="card-body">
-                            <p class="login-card-description">Ingresa el nuevo triángulo</p>
-                            <form action="#" th:action="@{/save}" th:object="${triangle}" method="post">
-                                <div class="form-group">
-                                    <label for="base" class="sr-only">Base</label>
-                                    <input type="text" name="base" id="base" class="form-control" placeholder="Base del triángulo" th:field="*{base}">
-                                </div>
-                                <div class="form-group mb-4">
-                                    <label for="altura" class="sr-only">Altura</label>
-                                    <input type="text" name="altura" id="altura" class="form-control" placeholder="Altura del triángulo" th:field="*{altura}">
-                                </div>
-                                <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Calcular el triángulo">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        </main>        
+        <div align="center">
+            <h1>Nuevo Cálculo</h1><br/>
+            <form action="#" th:action="@{/save}" th:object="${triangle}" method="post">
+                <table border="0" cellpadding="10">
+                    <tr>
+                        <td>Base del triángulo:</td>
+                        <td><input type="text" th:field="*{base}" /></td>
+                    </tr>
+                    <tr>
+                        <td>Altura del triángulo</td>
+                        <td><input type="text" th:field="*{altura}" /></td>
+                    </tr>	
+                    <tr>
+                        <td colspan="2"><button type="submit">Save</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>        
     </body>
 </html>
